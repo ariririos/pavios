@@ -109,17 +109,9 @@ gulp.task 'task', ->
 ## TODO
 - Need something more robust than module.exports.order (it's brittle and requires knowledge of pretty much every Pavios task and what it does)
   - Maybe some sort of "beforeFileOperations", "duringFileOperations", "afterFileOperations", "afterStartingServer" thing?
-
 - Error handling in pavios-jade (errors from gulp-jade aren't caught)
 - Eslint parsers/plugins have to be installed at the pavios-* level instead of the top level. This needs to be fixed because installing something like babel-eslint in node_modules is unsustainable.
 - Coffeelint doesn't detect coffeelint.json for some reason (This is probably not an issue with where the module is, because pavios-eslint detects .eslintrc correctly, and doesn't work with babel-eslint for it)
-- Should the Gulp API be implemented by the Pavios object?
-  - But maybe we want to cleanly separate Gulp functionality and Pavios addons.
-    - We might lose the connection to Gulp.
-      - Maybe we want to.
-
-  - Doesn't Pavios provide the addons and Gulp the base functionality?
-
 ```coffeescript
 pavios = require 'pavios'
 {API: {getConfig, $, typeCheck}} = pavios
